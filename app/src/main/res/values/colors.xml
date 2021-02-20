@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="prime">#9EBACC</color>
+    <color name="prime_dark">#8AA3B2</color>
+    <color name="secondary">#EFCF9E</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+    <color name="back">#F7F8Fa</color>
+
+
+
+    <color name="iconscolor">#616161</color>
+
+</resources>

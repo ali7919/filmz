@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_archive">
+
+
+
+    <fragment
+        android:id="@+id/navigation_archive"
+        android:name="com.codersan.filmz.ui.archive.ArchiveFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_archive" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_navigation_archive_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.codersan.filmz.ui.search.SearchFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.codersan.filmz.ui.details.DetailsFragment"
+        android:label="DetailsFragment" >
+        <argument
+            android:name="movie_id"
+            app:argType="string"
+            android:defaultValue="nothing" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.codersan.filmz.ui.about.AboutFragment"
+        android:label="About" />
+</navigation>

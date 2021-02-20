@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.codersan.filmz.ui.about.AboutViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/back"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        tools:context=".ui.about.AboutFragment">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="55sp"
+            android:text="FilmZ"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="made by Ali Mobarekati"
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+
+
+
+            >
+
+            <ImageView
+                android:onClick="@{vm::link_clicked}"
+                android:layout_width="@dimen/icon"
+                android:layout_height="@dimen/icon"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_telegram"
+                android:tag="0"
+
+                />
+            <ImageView
+                android:onClick="@{vm::link_clicked}"
+                android:layout_width="@dimen/icon"
+                android:layout_height="@dimen/icon"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_email"
+                android:tag="1"
+
+                />
+            <ImageView
+                android:onClick="@{vm::link_clicked}"
+                android:layout_width="@dimen/icon"
+                android:layout_height="@dimen/icon"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_github"
+                android:tag="2"
+
+                />
+
+            <ImageView
+                android:onClick="@{vm::link_clicked}"
+                android:layout_width="@dimen/icon"
+                android:layout_height="@dimen/icon"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_linkedin"
+                android:tag="3"
+
+                />
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
