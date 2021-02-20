@@ -19,10 +19,6 @@ ScreenShots
 
 Libraries Used
 --------------
-* [Foundation][0] - Components for core system capabilities, Kotlin extensions and support for
-  multidex and automated testing.
-  * [AppCompat][1] - Degrade gracefully on older versions of Android.
-  * [Android KTX][2] - Write more concise, idiomatic Kotlin code.
 * [Architecture][10] - A collection of libraries that help you design robust, testable, and
   maintainable apps. Start with classes for managing your UI component lifecycle and handling data
   persistence.
@@ -40,9 +36,7 @@ Libraries Used
   * [SimpleSearchView][93] Search view based on MaterialDesign guidlines
   * [Kotlin Coroutines][91] for managing background threads with simplified code and reducing needs for callbacks
 
-[0]: https://developer.android.com/jetpack/components
-[1]: https://developer.android.com/topic/libraries/support-library/packages#v7-appcompat
-[2]: https://developer.android.com/kotlin/ktx
+
 [10]: https://developer.android.com/jetpack/arch/
 [11]: https://developer.android.com/topic/libraries/data-binding/
 [12]: https://developer.android.com/topic/libraries/architecture/lifecycle
