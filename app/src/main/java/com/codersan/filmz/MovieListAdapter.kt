@@ -46,7 +46,7 @@ class MovieListAdapter : ListAdapter<Movie, MovieListAdapter.VH>(
         }
     }
 
-    interface OpenDetailsListener{
+    fun interface OpenDetailsListener{
         fun go_to_details(id:String)
     }
 

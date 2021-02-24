@@ -42,8 +42,7 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
             }
 
             //data is ready
-            listener.OptionMenu(options)
-            listener.OnReady()
+            listener.onReady(options)
         }
     }
 
@@ -63,9 +62,8 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
     }
 
 
-    interface ValuesReadyListener {
-        fun OnReady()
-        fun OptionMenu(hasMenu:Boolean)
+    fun interface ValuesReadyListener {
+        fun onReady(hasMenu:Boolean)
     }
 
 

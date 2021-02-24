@@ -27,22 +27,17 @@ class DetailsFragment : Fragment() {
         (activity as MainActivity).supportActionBar?.title="Loading..."
 
 
-        vm.listener= object : DetailsViewModel.ValuesReadyListener{
-            //when data is ready
-            override fun OnReady() {
+        vm.listener= DetailsViewModel.ValuesReadyListener { hasMenu ->
+            //data is ready
 
-                binding.invalidateAll()
-                binding.pb.visibility=View.GONE
+            //set menu
+            setHasOptionsMenu(hasMenu)
 
-                //change actionbar title
-                (activity as MainActivity).supportActionBar?.title=vm.movie?.title
+            binding.invalidateAll()
+            binding.pb.visibility=View.GONE
 
-            }
-
-            //listener for displaying the menu
-            override fun OptionMenu(hasMenu: Boolean) {
-                setHasOptionsMenu(hasMenu)
-            }
+            //change actionbar title
+            (activity as MainActivity).supportActionBar?.title=vm.movie?.title
         }
 
         return binding.root

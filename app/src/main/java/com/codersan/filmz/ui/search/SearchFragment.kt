@@ -43,13 +43,11 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //onclick listener for each movie
-        vm.adapter.listener=object : MovieListAdapter.OpenDetailsListener{
-            override fun go_to_details(id: String) {
-                val action = SearchFragmentDirections.actionNavigationNotificationsToDetailsFragment(
-                    id
-                )
-                findNavController().navigate(action)
-            }
+        vm.adapter.listener= MovieListAdapter.OpenDetailsListener { id ->
+            val action = SearchFragmentDirections.actionNavigationNotificationsToDetailsFragment(
+                id
+            )
+            findNavController().navigate(action)
         }
 
         //update recycler view

@@ -36,12 +36,11 @@ class ArchiveFragment : Fragment() {
 
 
         //onclick listener interface for each movie
-        vm.adapter.listener=object : MovieListAdapter.OpenDetailsListener{
-            override fun go_to_details(id: String) {
-                val action = ArchiveFragmentDirections.actionNavigationDashboardToDetailsFragment(id)
-                findNavController().navigate(action)
-            }
+        vm.adapter.listener= MovieListAdapter.OpenDetailsListener { id ->
+            val action = ArchiveFragmentDirections.actionNavigationDashboardToDetailsFragment(id)
+            findNavController().navigate(action)
         }
+
 
         //observe data for changes(deletes)
         vm.all.observe(viewLifecycleOwner, {
