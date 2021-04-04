@@ -3,6 +3,7 @@ package com.codersan.filmz.ui.details
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.codersan.filmz.MainActivity
@@ -27,17 +28,25 @@ class DetailsFragment : Fragment() {
         (activity as MainActivity).supportActionBar?.title="Loading..."
 
 
-        vm.listener= DetailsViewModel.ValuesReadyListener { hasMenu ->
-            //data is ready
+        vm.listener= object : DetailsViewModel.ValuesReadyListener {
+            override fun onReady(hasMenu: Boolean) {
+                //data is ready
 
-            //set menu
-            setHasOptionsMenu(hasMenu)
+                //set menu
+                setHasOptionsMenu(hasMenu)
 
-            binding.invalidateAll()
-            binding.pb.visibility=View.GONE
+                binding.invalidateAll()
+                binding.pb.visibility=View.GONE
 
-            //change actionbar title
-            (activity as MainActivity).supportActionBar?.title=vm.movie?.title
+                //change actionbar title
+                (activity as MainActivity).supportActionBar?.title=vm.movie?.title
+            }
+
+            override fun onFailed() {
+                Toast.makeText(activity,"connection error!", Toast.LENGTH_SHORT).show()
+                (activity as MainActivity).onBackPressed()
+
+            }
         }
 
         return binding.root

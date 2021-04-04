@@ -1,7 +1,9 @@
 package com.codersan.filmz.ui.search
 
 import android.app.Application
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.*
 import com.codersan.filmz.Models.Repository
 import com.codersan.filmz.MovieListAdapter
@@ -38,13 +40,21 @@ class SearchViewModel(application: Application) : AndroidViewModel(application) 
     fun search(name:String) {
         searching.value=View.VISIBLE //visibility of the progressbar
 
-
         viewModelScope.launch {
 
-            //get List<WebListItem> from web
-            all.value=repository.search_movie(name)
+            try {
 
-            searching.value=View.INVISIBLE
+                //get List<WebListItem> from web
+                all.value=repository.search_movie(name)
+                searching.value=View.INVISIBLE
+
+
+            }catch (e:Exception){
+                Toast.makeText(getApplication(),"connection error!", Toast.LENGTH_SHORT).show()
+
+
+            }
+
         }
     }
 
